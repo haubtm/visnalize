@@ -1,0 +1,217 @@
+.card {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: $cream-panel;
+  border: 2px solid $ink;
+  box-shadow: 10px 12px 0 0 $ink;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.card:hover {
+  transform: translate(-2px, -3px);
+  box-shadow: 14px 16px 0 0 $ink;
+}
+
+.header {
+  background: $teal;
+  padding: 16px 24px;
+
+  h3 {
+    font-family: $font-mono;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: normal;
+    color: $cream-logo;
+  }
+}
+
+.body {
+  background: $cream-panel;
+  padding: 26px 24px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.imageArea {
+  flex-shrink: 0;
+}
+
+.info {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.badge {
+  border: 1px solid $teal;
+  padding: 4px 8px;
+  font-family: $font-mono;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: normal;
+  color: $ink-2;
+}
+
+.desc {
+  font-family: $font-mono;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: normal;
+  color: $black;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  span {
+    font-family: $font-mono;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: normal;
+    color: $black;
+  }
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+// ---- mini stats strip ----
+.stats {
+  background: $cream-panel-2;
+  border-top: 3px dashed $tan;
+  border-bottom: 3px dashed $tan;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+
+  &:not(:first-child) {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
+
+.statIcon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  color: $ink;
+}
+
+.statBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  color: $ink;
+  line-height: 1;
+}
+
+.statValue {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  font-family: $font-mono;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1;
+
+  &.small {
+    font-size: 18px;
+  }
+}
+
+.statSub {
+  font-family: $font-mono;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+}
+
+// ---- footer ----
+.footer {
+  background: $teal;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.learnMore {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  color: $ink;
+  font-family: $font-mono;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: normal;
+  transition: gap 160ms ease;
+
+  &:hover {
+    gap: 12px;
+  }
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.badges {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+@media (max-width: $bp-mobile) {
+  .body {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+  .header h3 {
+    font-size: 26px;
+  }
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .badges {
+    justify-content: flex-start;
+  }
+}

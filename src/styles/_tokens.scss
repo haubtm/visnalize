@@ -1,0 +1,76 @@
+// =============================================================
+//  Design tokens — extracted verbatim from Figma (file BBDMdbPEDF33)
+// =============================================================
+
+// ---- Colors ----
+$teal:          #119d90; // primary brand
+$ink:           #0d0d0c; // near-black (borders, shadows, headings)
+$ink-2:         #0b0d0c; // near-black variant used on some labels
+$black:         #000000;
+$blue:          #0201f8; // "IMPROVEMENT" badge
+
+$cream:         #f3eee3; // hero background
+$cream-2:       #f7f1e7; // "Our apps" / "What's new" section background
+$cream-panel:   #f5efe4; // card body background
+$cream-panel-2: #f7f0e5; // stats strip background inside card
+$cream-btn:     #f3eee2; // light button face
+$cream-logo:    #f2ede2; // light text on teal (card headers)
+$cream-icon:    #f3ede1; // light icon fill (download/heart/globe)
+
+$tan:           #bfb2a8; // dashed divider colour
+$text-body:     #171616; // muted body text (changelog)
+
+// ---- Typography ----
+$font-mono:    'Iosevka Charon', 'Iosevka', 'Space Mono', 'Courier New', monospace;
+$font-display: 'League Spartan', 'Iosevka', 'Space Mono', sans-serif;
+
+// ---- Layout ----
+$page-max:   1440px;
+$gutter:     64px;   // horizontal page padding
+$content:    1312px; // inner content width (1440 - 2*64)
+
+// ---- Retro shadow offsets ----
+$btn-shadow:  4px;   // hard offset shadow on buttons (2.03% / 7.84% of 197x51)
+$card-shadow-x: 10px;
+$card-shadow-y: 12px;
+
+// ---- Breakpoints ----
+$bp-desktop:  1280px;
+$bp-laptop:   1024px;
+$bp-tablet:   768px;
+$bp-mobile:   480px;
+
+// =============================================================
+//  Mixins — the recurring retro building blocks
+// =============================================================
+
+// Hard offset "sticker" shadow used on every button.
+@mixin retro-button-shadow($offset: $btn-shadow, $color: $ink) {
+  border: 1px solid $color;
+  box-shadow: #{$offset} #{$offset} 0 0 $color;
+}
+
+// Solid offset shadow behind cards.
+@mixin retro-card-shadow($x: $card-shadow-x, $y: $card-shadow-y, $color: $ink) {
+  box-shadow: #{$x} #{$y} 0 0 $color;
+}
+
+// Chunky asymmetric frame (newsletter / discover cards).
+@mixin retro-frame {
+  border-style: solid;
+  border-color: $ink;
+  border-width: 2px 4px 4px 2px; // top right bottom left
+}
+
+// 8/8 dashed rule, 3px, tan — matches stroke-dasharray "8 8".
+@mixin dashed-rule($color: $tan, $w: 3px) {
+  border: none;
+  height: $w;
+  background-image: repeating-linear-gradient(
+    to right,
+    $color 0,
+    $color 8px,
+    transparent 8px,
+    transparent 16px
+  );
+}

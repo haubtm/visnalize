@@ -1,0 +1,50 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  font-family: $font-mono;
+  font-weight: 700;
+  line-height: normal;
+  white-space: nowrap;
+  border: 1px solid $ink;
+  box-shadow: #{$btn-shadow} #{$btn-shadow} 0 0 $ink;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+
+  svg {
+    flex-shrink: 0;
+  }
+
+  // Press-in on hover: slide toward the shadow so it "sticks" down.
+  &:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 0 $ink;
+  }
+
+  &:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 0 $ink;
+  }
+}
+
+.light {
+  background: $cream-btn;
+  color: $ink;
+}
+
+.teal {
+  background: $teal;
+  color: $cream-btn;
+}
+
+// Sizes
+.md {
+  font-size: 24px;
+}
+
+.sm {
+  font-size: 16px;
+}

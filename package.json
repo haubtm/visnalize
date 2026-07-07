@@ -1,0 +1,28 @@
+{
+  "name": "visnalize",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Retro-inspired app showcase — high-fidelity Figma implementation",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b --noEmit"
+  },
+  "dependencies": {
+    "@fontsource/iosevka": "^5.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "sass": "^1.83.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}

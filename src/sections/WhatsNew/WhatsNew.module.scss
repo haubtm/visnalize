@@ -1,0 +1,313 @@
+.section {
+  background: $cream-2;
+  padding: 80px $gutter;
+}
+
+.inner {
+  max-width: $content;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+// ---------- header ----------
+.head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.headLeft {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.pointer {
+  display: flex;
+  padding: 40px 0;
+  color: $ink;
+  flex-shrink: 0;
+}
+
+.headMain {
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.titleCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.kicker {
+  font-size: 64px;
+  margin-bottom: -6px;
+}
+
+.headline {
+  font-family: $font-mono;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: normal;
+  color: $ink;
+}
+
+.desc {
+  padding: 8px 0;
+  font-family: $font-mono;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: normal;
+  color: $black;
+  max-width: 401px;
+}
+
+// ---------- annotation legend ----------
+.annotation {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  border: 3px dashed $black;
+  border-radius: 4px;
+}
+
+.annTitle {
+  font-family: $font-mono;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: normal;
+  color: $ink;
+  text-align: center;
+  width: 100%;
+}
+
+.annRow {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.annItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+
+  &:last-child {
+    width: auto;
+  }
+
+  span {
+    font-family: $font-mono;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: normal;
+    color: $ink;
+  }
+  svg {
+    color: $ink;
+  }
+}
+
+// ---------- main two-column ----------
+.main {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.side {
+  flex: 400 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+// ---------- changelog card ----------
+.changelog {
+  flex: 888 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: $cream-panel;
+  border: 2px solid $ink;
+  box-shadow: 11px 13px 0 0 $ink;
+}
+
+.clHeader {
+  background: $teal;
+  padding: 16px 24px;
+
+  h3 {
+    font-family: $font-mono;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: normal;
+    color: $cream-logo;
+  }
+}
+
+.clScroll {
+  max-height: 598px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: $cream-panel;
+
+  // Retro scrollbar
+  scrollbar-width: thin;
+  scrollbar-color: $teal $cream-panel-2;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: $cream-panel-2;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $teal;
+    border: 2px solid $cream-panel-2;
+  }
+}
+
+.clList {
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.divider {
+  @include dashed-rule;
+  margin: 0;
+}
+
+.clFooter {
+  background: $cream-panel-2;
+  border-top: 3px dashed $tan;
+  border-bottom: 3px dashed $tan;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: $ink;
+  cursor: pointer;
+
+  span {
+    font-family: $font-mono;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: normal;
+    color: $black;
+  }
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+// ---------- discover card ----------
+.discover {
+  width: 100%;
+  border-style: solid;
+  border-color: $ink;
+  border-width: 2px 4px 4px 2px;
+}
+
+.discoverBody {
+  background: $cream-panel;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.discoverTitle {
+  font-family: $font-mono;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: normal;
+  color: $black;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.tag {
+  border: 1px solid $black;
+  padding: 2px 4px;
+  font-family: $font-mono;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: normal;
+  color: $ink-2;
+  background: none;
+  transition:
+    background 160ms ease,
+    color 160ms ease;
+
+  &:hover {
+    background: $teal;
+    color: $cream;
+    border-color: $teal;
+  }
+}
+
+// ---------- responsive ----------
+@media (max-width: 1024px) {
+  .main {
+    flex-direction: column;
+  }
+  .changelog,
+  .side {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 56px 24px;
+  }
+  .kicker {
+    font-size: 48px;
+  }
+  .headline {
+    font-size: 36px;
+  }
+  .clScroll {
+    max-height: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .pointer {
+    display: none;
+  }
+  .annotation {
+    width: 100%;
+  }
+  .kicker {
+    font-size: 40px;
+  }
+  .headline {
+    font-size: 28px;
+  }
+  .clHeader h3 {
+    font-size: 26px;
+  }
+}

@@ -1,0 +1,15 @@
+.teaser {
+  width: 100%;
+  background: $teal;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1440 / 810; // matches the Figma teaser frame (16:9)
+  max-height: 810px;
+  object-fit: cover;
+}

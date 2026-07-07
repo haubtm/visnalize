@@ -1,0 +1,83 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: $cream;
+  width: 100%;
+}
+
+.inner {
+  max-width: $page-max;
+  margin: 0 auto;
+  padding: 20px $gutter;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.logo {
+  flex-shrink: 0;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 40px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.link {
+  padding: 2px;
+  font-family: $font-mono;
+  font-weight: 400;
+  font-size: 16px;
+  color: $ink-2;
+  background: none;
+  border: none;
+  transition: color 160ms ease;
+
+  &:hover {
+    color: $teal;
+  }
+}
+
+.active {
+  color: $teal;
+}
+
+// Dashed rule under the sticky header (Figma: inset 64px each side, #bfb2a8)
+.divider {
+  max-width: $page-max;
+  margin: 0 auto;
+  padding: 0 $gutter;
+
+  span {
+    display: block;
+    @include dashed-rule;
+  }
+}
+
+@media (max-width: $bp-laptop) {
+  .nav {
+    gap: 10px;
+  }
+  .link {
+    font-size: 14px;
+  }
+  .right {
+    gap: 20px;
+  }
+}
+
+@media (max-width: $bp-tablet) {
+  .nav {
+    display: none;
+  }
+}

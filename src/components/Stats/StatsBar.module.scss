@@ -1,0 +1,92 @@
+.bar {
+  background: $teal;
+  border-top: 3px dashed $tan;
+  border-bottom: 3px dashed $tan;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 16px 40px;
+}
+
+.item {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+}
+
+.iconBox {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background: $teal;
+  border: 2px solid $ink;
+  color: $cream-icon; // drives currentColor of the pixel icon
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  color: $ink;
+}
+
+.value {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  font-family: $font-mono;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1;
+  white-space: nowrap;
+
+  svg {
+    margin-bottom: 4px;
+  }
+}
+
+.valueText {
+  font-size: 36px;
+}
+
+.label {
+  font-family: $font-mono;
+  font-size: 16px;
+  line-height: 1;
+
+  .bold {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .reg {
+    display: block;
+    font-weight: 400;
+  }
+}
+
+@media (max-width: $bp-laptop) {
+  .bar {
+    flex-wrap: wrap;
+    gap: 24px 16px;
+  }
+  .item {
+    flex: 1 1 44%;
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  .item {
+    flex: 1 1 100%;
+  }
+  .value {
+    font-size: 34px;
+  }
+}

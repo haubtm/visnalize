@@ -1,0 +1,22 @@
+// Reusable fade-in-up on scroll. Applied via useInView.
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 550ms ease,
+    transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

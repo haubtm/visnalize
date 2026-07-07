@@ -1,0 +1,31 @@
+.wrap {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  line-height: normal;
+  // isolate so the absolute shadow copy never affects surrounding flow height
+}
+
+.mono {
+  font-family: $font-mono;
+}
+
+.display {
+  font-family: $font-display;
+  font-weight: 800;
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: $teal;
+  user-select: none;
+  white-space: pre;
+}
+
+.front {
+  position: relative;
+  color: $ink;
+  white-space: pre;
+}

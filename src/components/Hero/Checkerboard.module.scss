@@ -1,0 +1,15 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 339px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.cell {
+  aspect-ratio: 1 / 1;
+}
+
+.teal {
+  background: $teal;
+}
