@@ -1,4 +1,5 @@
 .teaser {
+  position: relative;
   width: 100%;
   background: $teal;
   overflow: hidden;
@@ -12,4 +13,54 @@
   aspect-ratio: 1440 / 810; // matches the Figma teaser frame (16:9)
   max-height: 810px;
   object-fit: cover;
+}
+
+// Retro click-to-unmute control, bottom-right of the video.
+.sound {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: $cream-btn;
+  color: $ink;
+  border: 1px solid $ink;
+  box-shadow: #{$btn-shadow} #{$btn-shadow} 0 0 $ink;
+  font-family: $font-mono;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: normal;
+  white-space: nowrap;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+
+  svg {
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background: $teal;
+    color: $cream-btn;
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 0 $ink;
+  }
+
+  &:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 0 $ink;
+  }
+}
+
+@media (max-width: $bp-tablet) {
+  .sound {
+    right: 14px;
+    bottom: 14px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
 }

@@ -177,3 +177,29 @@ export function Bullet(props: IconProps) {
     </svg>
   );
 }
+
+/** Speaker with sound waves (unmuted). */
+export function VolumeOn(props: IconProps) {
+  return (
+    <svg {...base(24)} {...props}>
+      <path d="M4 9H8L13 4V20L8 15H4V9Z" fill="currentColor" />
+      <rect x="16" y="10" width="2" height="4" fill="currentColor" />
+      <rect x="19" y="8" width="2" height="8" fill="currentColor" />
+    </svg>
+  );
+}
+
+/** Speaker with an X (muted). */
+export function VolumeOff(props: IconProps) {
+  return (
+    <svg {...base(24)} {...props}>
+      <path d="M4 9H8L13 4V20L8 15H4V9Z" fill="currentColor" />
+      <path
+        d="M16 9L21 14M21 9L16 14"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="square"
+      />
+    </svg>
+  );
+}
