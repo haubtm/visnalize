@@ -1,0 +1,32 @@
+.wrap {
+  // inherits font/size from the surrounding element
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.58em;
+  height: 1em;
+  margin-left: 2px;
+  background: currentColor;
+  vertical-align: text-bottom;
+  transform: translateY(-0.08em);
+  animation: blink 1s steps(1, end) infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+    opacity: 0;
+  }
+}

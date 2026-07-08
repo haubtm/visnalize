@@ -1,6 +1,7 @@
 import Button from '../../components/Shared/Button';
 import LayeredHeading from '../../components/Shared/LayeredHeading';
 import CroppedImage from '../../components/Shared/CroppedImage';
+import TypewriterText from '../../components/Shared/TypewriterText';
 import Checkerboard from '../../components/Hero/Checkerboard';
 import StatsBar from '../../components/Stats/StatsBar';
 import { PointerRight } from '../../components/icons';
@@ -27,7 +28,7 @@ export default function Hero() {
               </LayeredHeading>
               <p className={styles.tagline}>
                 <PointerRight width={32} height={32} />
-                <span>MODERN APPS FOR VINTAGES SOULS</span>
+                <TypewriterText text="MODERN APPS FOR VINTAGES SOULS" speed={55} startDelay={500} />
               </p>
             </div>
 

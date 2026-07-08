@@ -2,24 +2,25 @@
   background: $teal;
   border-top: 3px dashed $tan;
   border-bottom: 3px dashed $tan;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // four equal columns — even distribution
   align-items: center;
   gap: 40px;
   padding: 16px 40px;
+  min-height: 199px; // matches the Figma bar height (content vertically centered)
 }
 
 .item {
-  flex: 1 1 0;
-  min-width: 0;
   display: flex;
-  align-items: stretch;
+  align-items: center;
   gap: 16px;
+  min-width: 0;
 }
 
 .iconBox {
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+  width: 70px;
+  height: 70px; // square box, consistent across all four stats
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,9 +28,16 @@
   background: $teal;
   border: 2px solid $ink;
   color: $cream-icon; // drives currentColor of the pixel icon
+
+  svg {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
 }
 
 .body {
+  min-width: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,7 +61,8 @@
 }
 
 .valueText {
-  font-size: 36px;
+  font-size: 32px; // "TOP IN INDIA" — sized to fit its column with stock Iosevka
+  letter-spacing: -0.02em;
 }
 
 .label {
@@ -74,19 +83,20 @@
 
 @media (max-width: $bp-laptop) {
   .bar {
-    flex-wrap: wrap;
-    gap: 24px 16px;
-  }
-  .item {
-    flex: 1 1 44%;
+    grid-template-columns: repeat(2, 1fr);
+    min-height: 0;
+    gap: 28px 24px;
   }
 }
 
 @media (max-width: $bp-mobile) {
-  .item {
-    flex: 1 1 100%;
+  .bar {
+    grid-template-columns: 1fr;
   }
   .value {
     font-size: 34px;
+  }
+  .valueText {
+    font-size: 28px;
   }
 }
