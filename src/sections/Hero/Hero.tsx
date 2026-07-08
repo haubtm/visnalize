@@ -5,7 +5,7 @@ import TypewriterText from '../../components/Shared/TypewriterText';
 import Checkerboard from '../../components/Hero/Checkerboard';
 import StatsBar from '../../components/Stats/StatsBar';
 import { PointerRight } from '../../components/icons';
-import heroDevice from '../../assets/figma/hero_device.png';
+import heroDevices from '../../assets/figma/hero_devices.png';
 import styles from './Hero.module.scss';
 
 export default function Hero() {
@@ -51,12 +51,12 @@ export default function Hero() {
           <div className={styles.imageCol}>
             <CroppedImage
               className={styles.heroImage}
-              src={heroDevice}
-              alt="Windows 7 tablet and a retro brick phone running Visnalize"
-              aspectRatio="505 / 515"
+              src={heroDevices}
+              alt="Visnalize Studio — a smartphone running Windows 7 beside a retro brick phone"
+              aspectRatio="644 / 424"
               loading="eager"
               style={{ width: '100%' }}
-              inner={{ top: '-17.73%', left: '-61.96%', width: '168.96%', height: '124.26%' }}
+              inner={{ top: '-2.09%', left: '-1.59%', width: '103.19%', height: '104.45%' }}
             />
           </div>
         </div>

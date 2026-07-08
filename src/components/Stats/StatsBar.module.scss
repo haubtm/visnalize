@@ -6,7 +6,7 @@
   grid-template-columns: repeat(4, 1fr); // four equal columns — even distribution
   align-items: center;
   gap: 40px;
-  padding: 16px 40px;
+  padding: 16px 64px; // full-bleed bar, 64px gutters (Figma left-0 w-1440 px-64)
   min-height: 199px; // matches the Figma bar height (content vertically centered)
 }
 
@@ -25,7 +25,7 @@
   align-items: center;
   justify-content: center;
   padding: 12px;
-  background: $teal;
+  background: $teal-dark; // darker teal box, distinct from the bar
   border: 2px solid $ink;
   color: $cream-icon; // drives currentColor of the pixel icon
 
@@ -61,7 +61,7 @@
 }
 
 .valueText {
-  font-size: 32px; // "TOP IN INDIA" — sized to fit its column with stock Iosevka
+  font-size: 36px; // "TOP IN INDIA" — Figma size; fits now the bar is full-width
   letter-spacing: -0.02em;
 }
 
@@ -86,6 +86,13 @@
     grid-template-columns: repeat(2, 1fr);
     min-height: 0;
     gap: 28px 24px;
+    padding: 32px 40px;
+  }
+}
+
+@media (max-width: $bp-tablet) {
+  .bar {
+    padding: 28px 24px;
   }
 }
 
