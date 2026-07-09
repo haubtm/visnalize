@@ -78,7 +78,7 @@ export default function WhatsNew() {
               </div>
               <div className={styles.annItem}>
                 <Apple width={40} height={40} />
-                <span>iSO</span>
+                <span>iOS</span>
               </div>
               <div className={styles.annItem}>
                 <img src={gem} alt="" width={24.889} height={32} />
